@@ -40,11 +40,7 @@ Make sure you activated the full features of the tokio crate on Cargo.toml:
 
 ```toml
 [dependencies]
-<<<<<<< HEAD
-tokio = { version = "1.27.0", features = ["full"] }
-=======
 tokio_wasi = { version = "1.21.2", features = ["full"] }
->>>>>>> eff38650 (Fix the tokio sub-project's README)
 ```
 Then, on your main.rs:
 
@@ -91,7 +87,6 @@ More examples can be found [here][examples]. For a larger "real world" example, 
 [examples]: https://github.com/tokio-rs/tokio/tree/master/examples
 [mini-redis]: https://github.com/tokio-rs/mini-redis/
 
-<<<<<<< HEAD
 To see a list of the available features flags that can be enabled, check our
 [docs][feature-flag-docs].
 
@@ -219,8 +214,6 @@ can use the following dependency specification:
 tokio = { version = "~1.18", features = [...] }
 ```
 
-=======
->>>>>>> eff38650 (Fix the tokio sub-project's README)
 ## License
 
 This project is licensed under the [MIT license].
