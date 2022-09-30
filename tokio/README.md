@@ -1,7 +1,10 @@
-# Tokio
+# Tokio for WebAssembly
 
 A runtime for writing reliable, asynchronous, and slim applications with
-the Rust programming language. It is:
+the Rust programming language. 
+This is a fork of the [original tokio](https://github.com/tokio-rs/tokio) so that it can be compiled into
+WebAssembly. The WebAssembly app can run inside the [WasmEdge Runtime](https://github.com/WasmEdge/WasmEdge#readme)
+as a lightweight and secure alternative to natively compiled apps in Linux container.
 
 * **Fast**: Tokio's zero-cost abstractions give you bare-metal
   performance.
@@ -11,25 +14,6 @@ the Rust programming language. It is:
 
 * **Scalable**: Tokio has a minimal footprint, and handles backpressure
   and cancellation naturally.
-
-[![Crates.io][crates-badge]][crates-url]
-[![MIT licensed][mit-badge]][mit-url]
-[![Build Status][actions-badge]][actions-url]
-[![Discord chat][discord-badge]][discord-url]
-
-[crates-badge]: https://img.shields.io/crates/v/tokio.svg
-[crates-url]: https://crates.io/crates/tokio
-[mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[mit-url]: https://github.com/tokio-rs/tokio/blob/master/LICENSE
-[actions-badge]: https://github.com/tokio-rs/tokio/workflows/CI/badge.svg
-[actions-url]: https://github.com/tokio-rs/tokio/actions?query=workflow%3ACI+branch%3Amaster
-[discord-badge]: https://img.shields.io/discord/500028886025895936.svg?logo=discord&style=flat-square
-[discord-url]: https://discord.gg/tokio
-
-[Website](https://tokio.rs) |
-[Guides](https://tokio.rs/tokio/tutorial) |
-[API Docs](https://docs.rs/tokio/latest/tokio) |
-[Chat](https://discord.gg/tokio)
 
 ## Overview
 
@@ -56,7 +40,11 @@ Make sure you activated the full features of the tokio crate on Cargo.toml:
 
 ```toml
 [dependencies]
+<<<<<<< HEAD
 tokio = { version = "1.27.0", features = ["full"] }
+=======
+tokio_wasi = { version = "1.21.2", features = ["full"] }
+>>>>>>> eff38650 (Fix the tokio sub-project's README)
 ```
 Then, on your main.rs:
 
@@ -103,6 +91,7 @@ More examples can be found [here][examples]. For a larger "real world" example, 
 [examples]: https://github.com/tokio-rs/tokio/tree/master/examples
 [mini-redis]: https://github.com/tokio-rs/mini-redis/
 
+<<<<<<< HEAD
 To see a list of the available features flags that can be enabled, check our
 [docs][feature-flag-docs].
 
@@ -230,6 +219,8 @@ can use the following dependency specification:
 tokio = { version = "~1.18", features = [...] }
 ```
 
+=======
+>>>>>>> eff38650 (Fix the tokio sub-project's README)
 ## License
 
 This project is licensed under the [MIT license].
