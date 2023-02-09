@@ -98,7 +98,7 @@ time = []
 stats = []
 
 [build-dependencies]
-autocfg = "1.1"
+autocfg = "1.0"
 
 [dependencies]
 tokio-macros = { version = "~2.0.0", path = "../tokio-macros", optional = true }
