@@ -1,4 +1,4 @@
-#![cfg(not(tokio_wasi))]
+#![cfg(not(tokio))]
 
 use std::{task::Context, time::Duration};
 

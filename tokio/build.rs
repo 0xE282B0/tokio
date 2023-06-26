@@ -184,7 +184,7 @@ fn main() {
     if target.starts_with("wasm") {
         autocfg::emit("tokio_wasm");
         if target.contains("wasi") {
-            autocfg::emit("tokio_wasi_wasmedge");
+            autocfg::emit("tokio_wasmedge");
         } else {
             autocfg::emit("tokio_wasm_not_wasi");
         }

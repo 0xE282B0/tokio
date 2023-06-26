@@ -27,18 +27,18 @@ default = []
 # Shorthand for enabling everything
 full = ["codec", "compat", "io-util", "time", "net", "rt"]
 
-net = ["tokio_wasi/net"]
+net = ["tokio/net"]
 compat = ["futures-io",]
 codec = ["tracing"]
-time = ["tokio_wasi/time","slab"]
+time = ["tokio/time","slab"]
 io = []
-io-util = ["io", "tokio_wasi/rt", "tokio_wasi/io-util"]
-rt = ["tokio_wasi/rt", "tokio_wasi/sync", "futures-util", "hashbrown"]
+io-util = ["io", "tokio/rt", "tokio/io-util"]
+rt = ["tokio/rt", "tokio/sync", "futures-util", "hashbrown"]
 
 __docs_rs = ["futures-util"]
 
 [dependencies]
-tokio_wasi = { path = "../tokio", version = "1", features = ["sync"] }
+tokio = { path = "../tokio", version = "1", features = ["sync"] }
 bytes = "1.0.0"
 futures-core = "0.3.0"
 futures-sink = "0.3.0"

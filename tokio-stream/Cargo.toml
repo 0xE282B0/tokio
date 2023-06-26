@@ -32,17 +32,17 @@ full = [
     "signal"
 ]
 
-time = ["tokio_wasi/time"]
-net = ["tokio_wasi/net"]
-io-util = ["tokio_wasi/io-util"]
-fs = ["tokio_wasi/fs"]
-sync = ["tokio_wasi/sync", "tokio-util_wasi"]
-signal = ["tokio_wasi/signal"]
+time = ["tokio/time"]
+net = ["tokio/net"]
+io-util = ["tokio/io-util"]
+fs = ["tokio/fs"]
+sync = ["tokio/sync", "tokio-util_wasi"]
+signal = ["tokio/signal"]
 
 [dependencies]
 futures-core = { version = "0.3.0" }
 pin-project-lite = "0.2.0"
-tokio_wasi = { path = "../tokio", version = "1", features = ["sync"] }
+tokio = { path = "../tokio", version = "1", features = ["sync"] }
 tokio-util_wasi = { path = "../tokio-util", version = "0.7", optional = true }
 
 # [dev-dependencies]

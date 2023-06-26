@@ -292,7 +292,7 @@ impl TcpListener {
                 .map(|raw_socket| unsafe { std::net::TcpListener::from_raw_socket(raw_socket) })
         }
 
-        #[cfg(tokio_wasi)]
+        #[cfg(tokio)]
         {
             use std::os::wasi::io::{FromRawFd, IntoRawFd};
             self.io
@@ -434,7 +434,7 @@ mod sys {
 }
 
 cfg_unstable! {
-    #[cfg(tokio_wasi)]
+    #[cfg(tokio)]
     mod sys {
         use super::TcpListener;
         use std::os::wasi::prelude::*;

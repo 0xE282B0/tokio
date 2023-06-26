@@ -87,7 +87,7 @@ async fn reserve_disarm() {
 }
 
 #[tokio::test]
-#[cfg(all(feature = "full", not(tokio_wasi)))] // Wasi doesn't support threads
+#[cfg(all(feature = "full", not(tokio)))] // Wasi doesn't support threads
 async fn send_recv_stream_with_buffer() {
     use tokio_stream::StreamExt;
 
@@ -191,7 +191,7 @@ async fn async_send_recv_unbounded() {
 }
 
 #[tokio::test]
-#[cfg(all(feature = "full", not(tokio_wasi)))] // Wasi doesn't support threads
+#[cfg(all(feature = "full", not(tokio)))] // Wasi doesn't support threads
 async fn send_recv_stream_unbounded() {
     use tokio_stream::StreamExt;
 
@@ -452,7 +452,7 @@ fn unconsumed_messages_are_dropped() {
 }
 
 #[test]
-#[cfg(all(feature = "full", not(tokio_wasi)))] // Wasi doesn't support threads
+#[cfg(all(feature = "full", not(tokio)))] // Wasi doesn't support threads
 fn blocking_recv() {
     let (tx, mut rx) = mpsc::channel::<u8>(1);
 
@@ -477,7 +477,7 @@ async fn blocking_recv_async() {
 }
 
 #[test]
-#[cfg(all(feature = "full", not(tokio_wasi)))] // Wasi doesn't support threads
+#[cfg(all(feature = "full", not(tokio)))] // Wasi doesn't support threads
 fn blocking_send() {
     let (tx, mut rx) = mpsc::channel::<u8>(1);
 

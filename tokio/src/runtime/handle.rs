@@ -322,7 +322,7 @@ impl Handle {
     pub fn runtime_flavor(&self) -> RuntimeFlavor {
         match self.inner {
             scheduler::Handle::CurrentThread(_) => RuntimeFlavor::CurrentThread,
-            #[cfg(all(feature = "rt-multi-thread", not(tokio_wasi)))]
+            #[cfg(all(feature = "rt-multi-thread", not(tokio)))]
             scheduler::Handle::MultiThread(_) => RuntimeFlavor::MultiThread,
         }
     }
@@ -346,7 +346,7 @@ cfg_taskdump! {
         pub fn dump(&self) -> crate::runtime::Dump {
             match &self.inner {
                 scheduler::Handle::CurrentThread(handle) => handle.dump(),
-                #[cfg(all(feature = "rt-multi-thread", not(tokio_wasi)))]
+                #[cfg(all(feature = "rt-multi-thread", not(tokio)))]
                 scheduler::Handle::MultiThread(_) =>
                     unimplemented!("taskdumps are unsupported on the multi-thread runtime"),
             }

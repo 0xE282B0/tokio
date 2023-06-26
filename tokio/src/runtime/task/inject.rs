@@ -59,7 +59,7 @@ impl<T: 'static> Inject<T> {
     }
 
     // Kind of annoying to have to include the cfg here
-    #[cfg(any(tokio_taskdump, all(feature = "rt-multi-thread", not(tokio_wasi))))]
+    #[cfg(any(tokio_taskdump, all(feature = "rt-multi-thread", not(tokio))))]
     pub(crate) fn is_closed(&self) -> bool {
         self.pointers.lock().is_closed
     }
